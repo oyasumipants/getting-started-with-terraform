@@ -2,15 +2,15 @@ terraform {
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
-      version = "~> 3.0.1"
+      version = "~> 4.0.0"
     }
   }
 
-  required_version = ">= 1.11.0"
+  required_version = ">= 1.14.0"
 
   backend "local" {}
 }
 
 provider "docker" {
-  host = "unix:///var/run/docker.sock"
+  host = var.docker_host
 }
